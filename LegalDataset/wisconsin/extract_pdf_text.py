@@ -1,6 +1,7 @@
-# NOTE - Obsolete. INstead, Use linux command 
-# pdftotext ../nogit_data/text.pdf ../nogit_data/text.txt
-# Faster and slightly cleaner output
+# NOTE 18 Mar 2023 - Obsolete. 
+# Faster and slightly cleaner output using linux command: 
+# 
+# $ pdftotext ../nogit_data/text.pdf ../nogit_data/text.txt
 
 import typing
 from pathlib import Path
@@ -12,12 +13,6 @@ from borb.toolkit import SimpleTextExtraction
 #from borb.pdf import Paragraph
 from borb.pdf import PDF
 
-
-# NOTE: Inside ../nogit_data:
-# curl https://online.drl.wi.gov/decisions/2016/ORDER0004812-00012863.pdf -o no_text_annot.pdf -C -
-# curl https://online.drl.wi.gov/decisions/2015/ORDER0004379-00012032.pdf
-# -o annotated.pdf -C -
-# curl https://online.drl.wi.gov/decisions/2020/ORDER0006966-00016969.pdf -o incorrect_text_annot.pdf -C -
 
 # NOTE: Borb documentation:
 # https://stackabuse.com/automating-processing-pdf-invoices-in-python-with-borb/

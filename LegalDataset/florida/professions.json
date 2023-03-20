@@ -1,0 +1,1654 @@
+[
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "911 Law Enforcement Officer                                                ",
+        "Value": "2403"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "911 Public Safety Telecommunicator                                         ",
+        "Value": "2401"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "911 Public Safety Telecommunicator Training Program                        ",
+        "Value": "2402"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Acupuncturist                                                              ",
+        "Value": "3801"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Acupuncturist Out-of-State Telehealth                                      ",
+        "Value": "9676"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Advanced Practice Registered Nurse                                         ",
+        "Value": "1711"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Advanced Practice Registered Nurse Out-of-State Telehealth Provider        ",
+        "Value": "9603"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Anesthesiologist Assistants                                                ",
+        "Value": "1515"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Anesthesiologist Assistants Out-of-State Telehealth Provider               ",
+        "Value": "9607"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Apprentice Optician                                                        ",
+        "Value": "2002"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Apprentice Optician Out-of-State Telehealth                                ",
+        "Value": "9641"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Approved CE Courses                                                        ",
+        "Value": "2513"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Athletic Trainer                                                           ",
+        "Value": "1001"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Athletic Trainer Out-of-State Telehealth                                   ",
+        "Value": "9639"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Audiologist                                                                ",
+        "Value": "3002"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Audiologist Out-of-State Telehealth                                        ",
+        "Value": "9672"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Audiology Assistant                                                        ",
+        "Value": "3004"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Board Certified Assistant Behavior Analyst  Out-of-State Telehealth        ",
+        "Value": "9679"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Board Certified Behavior Analyst \u2013 Doctoral level Out-of-State Telehealth  ",
+        "Value": "9677"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Board Certified Behavior Analyst Out-of-State Telehealth                   ",
+        "Value": "9678"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "CE Provider                                                                ",
+        "Value": "2512"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Certified Chiropractic Physician's Assistant                               ",
+        "Value": "503"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Certified Chiropractic Physician's Assistant Out-of-State Telehealth Pvdr  ",
+        "Value": "9622"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Certified Foreign School                                                   ",
+        "Value": "1511"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Certified Master Social Worker                                             ",
+        "Value": "5401"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Certified Master Social Worker Out-of-State Telehealth                     ",
+        "Value": "9653"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Certified Nursing Assistant                                                ",
+        "Value": "4401"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Certified Nursing Assistant Out-of-State Telehealth Provider               ",
+        "Value": "9604"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Certified Pod X-Ray Assistant                                              ",
+        "Value": "2105"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Certified Respiratory Therapist                                            ",
+        "Value": "5702"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Certified Respiratory Therapist Out-of-State Telehealth                    ",
+        "Value": "9663"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Chiropractic Faculty Certificate                                           ",
+        "Value": "506"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Chiropractic Physician                                                     ",
+        "Value": "501"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Chiropractic Physician Out-of-State Telehealth Provider                    ",
+        "Value": "9621"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Clinical Laboratories-Reference Only                                       ",
+        "Value": "6604"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Clinical Laboratory Personnel                                              ",
+        "Value": "6601"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Clinical Laboratory Technologist Out-of-State Telehealth                   ",
+        "Value": "9633"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Clinical Laboratory Trainee                                                ",
+        "Value": "6602"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Clinical Laboratory Trainee Out-of-State Telehealth                        ",
+        "Value": "9634"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Clinical Laboratory Training Program                                       ",
+        "Value": "6603"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "CNA Programs                                                               ",
+        "Value": "4402"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Consultant Pharmacist                                                      ",
+        "Value": "2203"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Consultant Pharmacist Out-of-State Telehealth Provider                     ",
+        "Value": "9611"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "CPR Equivalency Provider                                                   ",
+        "Value": "2514"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Dental                                                                     ",
+        "Value": "701"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Dental Expert Witness Certificate                                          ",
+        "Value": "717"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Dental Hygienist                                                           ",
+        "Value": "702"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Dental Laboratory                                                          ",
+        "Value": "704"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Dental Out-of-State Telehealth                                             ",
+        "Value": "9637"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Dental Radiographer                                                        ",
+        "Value": "703"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Dental Residency Permits                                                   ",
+        "Value": "707"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Dental Teaching Permits                                                    ",
+        "Value": "706"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Dental Teaching Permits Out-of-State Telehealth                            ",
+        "Value": "9638"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Dental Temporary Certificate                                               ",
+        "Value": "709"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Dental-Health Access Dental                                                ",
+        "Value": "708"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Diagnostic Radiological Physicist                                          ",
+        "Value": "6001"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Diagnostic Radiological Physicist Out-of-State Telehealth                  ",
+        "Value": "9627"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Dietetics/Nutritionist                                                     ",
+        "Value": "6101"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Dietetics/Nutritionist Out-of-State Telehealth                             ",
+        "Value": "9666"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Electrologist                                                              ",
+        "Value": "6501"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Electrologist Out-of-State Telehealth                                      ",
+        "Value": "9668"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Electroloysis Laser Provider                                               ",
+        "Value": "6503"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Electrolysis Facility                                                      ",
+        "Value": "6502"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Emergency Allergy Treatment Licensee                                       ",
+        "Value": "2503"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Emergency Allergy Treatment Licensee Out-of-State Telehealth Provider      ",
+        "Value": "9626"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Emergency Medical Technician                                               ",
+        "Value": "2501"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Emergency Medical Technician Out-of-State Telehealth Provider              ",
+        "Value": "9624"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "EMS Service Provider Air                                                   ",
+        "Value": "2603"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "EMS Service Provider ALS                                                   ",
+        "Value": "2601"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "EMS Service Provider BLS                                                   ",
+        "Value": "2602"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "EMT Training Program                                                       ",
+        "Value": "2510"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Genetic Counselor                                                          ",
+        "Value": "5301"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Government Entities                                                        ",
+        "Value": "9802"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Hearing Aid Specialist                                                     ",
+        "Value": "3601"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Hearing Aid Specialist Out-of-State Telehealth                             ",
+        "Value": "9642"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Hearing Aid Specialist Trainee                                             ",
+        "Value": "3603"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Hearing Aid Specialist Trainee Out-of-State Telehealth                     ",
+        "Value": "9643"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Licensed Clinical Social Worker                                            ",
+        "Value": "5201"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Licensed Clinical Social Worker Out-of-State Telehealth                    ",
+        "Value": "9644"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Licensed Marriage and Family Therapist                                     ",
+        "Value": "5202"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Licensed Marriage and Family Therapist Out-of-State Telehealth             ",
+        "Value": "9645"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Licensed Mental Health Counselor                                           ",
+        "Value": "5203"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Licensed Mental Health Counselor Out-of-State Telehealth                   ",
+        "Value": "9646"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Licensed Practical Nurse                                                   ",
+        "Value": "1702"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Licensed Practical Nurse Out-of-State Telehealth Provider                  ",
+        "Value": "9602"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Limited License Medical Doctor                                             ",
+        "Value": "1506"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Limited License Psychologist                                               ",
+        "Value": "2703"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Limited License Psychologist Out-of-State Telehealth                       ",
+        "Value": "9656"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Massage Establishment                                                      ",
+        "Value": "1402"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Massage Therapist                                                          ",
+        "Value": "1401"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Massage Therapist Out-of-State Telehealth                                  ",
+        "Value": "9669"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Massage Therapy Apprentice                                                 ",
+        "Value": "1406"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Medical Doctor                                                             ",
+        "Value": "1501"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Medical Doctor Expert Witness Certificate                                  ",
+        "Value": "1517"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Medical Doctor Limited to Cleveland Clinic                                 ",
+        "Value": "1505"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Medical Doctor Limited to Mayo Clinic                                      ",
+        "Value": "1504"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Medical Doctor Out-of-State Telehealth Provider                            ",
+        "Value": "9605"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Medical Doctor Public Health Certificate                                   ",
+        "Value": "1503"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Medical Doctor Public Psychiatry Certificate                               ",
+        "Value": "1502"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Medical Doctor Restricted                                                  ",
+        "Value": "1513"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Medical Doctor Visiting Faculty Certificate                                ",
+        "Value": "1509"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Medical Doctor- Temporary Area of Critical Need                            ",
+        "Value": "1507"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Medical Faculty Certificate                                                ",
+        "Value": "1508"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Medical Health Physicist                                                   ",
+        "Value": "6004"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Medical Health Physicist Out-of-State Telehealth                           ",
+        "Value": "9630"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Medical Nuclear Radiological Physicist                                     ",
+        "Value": "6003"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Medical Nuclear Radiological Physicist Out-of-State Telehealth             ",
+        "Value": "9629"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Medical Physicist In Training                                              ",
+        "Value": "6007"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Medical Physicist In Training Out-of-State Telehealth                      ",
+        "Value": "9631"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Midwifery                                                                  ",
+        "Value": "3201"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Midwifery Out-of-State Telehealth                                          ",
+        "Value": "9675"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Naturopathic Physician                                                     ",
+        "Value": "1601"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Non-Profit Corporations                                                    ",
+        "Value": "710"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Nonresident Sterile Compounding                                            ",
+        "Value": "2210"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Nuclear Pharmacist                                                         ",
+        "Value": "2204"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Nuclear Pharmacist Out-of-State Telehealth Provider                        ",
+        "Value": "9612"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Nursing Education Program- PN                                              ",
+        "Value": "1705"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Nursing Education Program- RN                                              ",
+        "Value": "1704"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Nursing Home Administrator                                                 ",
+        "Value": "801"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Nursing Home Administrator Provisional License                             ",
+        "Value": "802"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Nutrition Counselor                                                        ",
+        "Value": "6102"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Nutrition Counselor Out-of-State Telehealth                                ",
+        "Value": "9667"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Occupational Therapist                                                     ",
+        "Value": "5601"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Occupational Therapist Out-of-State Telehealth                             ",
+        "Value": "9660"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Occupational Therapy Assistant                                             ",
+        "Value": "5602"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Occupational Therapy Assistant Out-of-State Telehealth                     ",
+        "Value": "9661"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Occupational Therapy Doctoral Capstone Experience                          ",
+        "Value": "5604"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Office Surgery Registration                                                ",
+        "Value": "1514"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Optical Establishment Permit                                               ",
+        "Value": "2003"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Optician                                                                   ",
+        "Value": "2001"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Optician Out-of-State Telehealth                                           ",
+        "Value": "9640"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Optometric Faculty Certificate                                             ",
+        "Value": "1805"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Optometrist                                                                ",
+        "Value": "1801"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Optometrist Out-of-State Telehealth Provider                               ",
+        "Value": "9623"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Optometry Branch Office                                                    ",
+        "Value": "1802"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Orthotic Fitter                                                            ",
+        "Value": "3104"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Orthotic Fitter Assistant                                                  ",
+        "Value": "3105"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Orthotic Fitter Assistant Out-of-State Telehealth Provider                 ",
+        "Value": "9617"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Orthotic Fitter Out-of-State Telehealth Provider                           ",
+        "Value": "9616"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Orthotic Resident                                                          ",
+        "Value": "3109"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Orthotic Resident Out-of-State Telehealth Provider                         ",
+        "Value": "9619"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Orthotic-Prosthetic Resident                                               ",
+        "Value": "3111"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Orthotist                                                                  ",
+        "Value": "3103"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Orthotist Out-of-State Telehealth Provider                                 ",
+        "Value": "9615"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Osteopathic Faculty Certificate                                            ",
+        "Value": "1904"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Osteopathic Limited License                                                ",
+        "Value": "1903"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Osteopathic Physician                                                      ",
+        "Value": "1901"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Osteopathic Physician Expert Witness Certificate                           ",
+        "Value": "1917"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Osteopathic Physician Out-of-State Telehealth                              ",
+        "Value": "9670"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Osteopathic Resident Registration                                          ",
+        "Value": "1902"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Osteopathic- Temporary Area of Critical Need                               ",
+        "Value": "1905"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Pain Management Clinic                                                     ",
+        "Value": "1516"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Paramedic                                                                  ",
+        "Value": "2502"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Paramedic Out-of-State Telehealth Provider                                 ",
+        "Value": "9625"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Paramedic Training Program                                                 ",
+        "Value": "2511"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Pedorthist                                                                 ",
+        "Value": "3106"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Pedorthist Out-of-State Telehealth Provider                                ",
+        "Value": "9618"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Pharmacist                                                                 ",
+        "Value": "2201"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Pharmacist Intern                                                          ",
+        "Value": "2202"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Pharmacist Out-of-State Telehealth Provider                                ",
+        "Value": "9610"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Pharmacy                                                                   ",
+        "Value": "2205"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Pharmacy Administrator Account                                             ",
+        "Value": "2298"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Pharmacy Technician Training Program                                       ",
+        "Value": "2209"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Physical Therapist                                                         ",
+        "Value": "5501"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Physical Therapist Assistant                                               ",
+        "Value": "5502"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Physical Therapist Assistant Out-of-State Telehealth                       ",
+        "Value": "9659"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Physical Therapist Out-of-State Telehealth                                 ",
+        "Value": "9658"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Physician Assistant                                                        ",
+        "Value": "1512"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Physician Assistant Out-of-State Telehealth Provider                       ",
+        "Value": "9606"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "PN Remedial Course                                                         ",
+        "Value": "1709"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Podiatric Physician                                                        ",
+        "Value": "2101"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Podiatric Physician Out-of-State Telehealth Provider                       ",
+        "Value": "9608"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Podiatric Residency Program                                                ",
+        "Value": "2102"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Podiatric Resident Registration                                            ",
+        "Value": "2106"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Podiatric Resident Registration Out-of-State Telehealth Provider           ",
+        "Value": "9609"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Prosthetic Residents                                                       ",
+        "Value": "3110"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Prosthetic Residents Out-of-State Telehealth Provider                      ",
+        "Value": "9620"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Prosthetist                                                                ",
+        "Value": "3102"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Prosthetist Out-of-State Telehealth Provider                               ",
+        "Value": "9614"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Prosthetist-Orthotist                                                      ",
+        "Value": "3101"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Prosthetist-Orthotist Out-of-State Telehealth Provider                     ",
+        "Value": "9613"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Provisional Audiologist                                                    ",
+        "Value": "3006"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Provisional Audiologist Out-of-State Telehealth                            ",
+        "Value": "9674"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Provisional Clinical Social Worker Licensee                                ",
+        "Value": "5204"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Provisional Clinical Social Worker Licensee Out-of-State Telehealth        ",
+        "Value": "9647"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Provisional Marriage and Family Therapist Licensee                         ",
+        "Value": "5205"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Provisional Marriage and Family Therapist Licensee Out-of-State Telehealth ",
+        "Value": "9648"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Provisional Mental health Counselor Licensee                               ",
+        "Value": "5206"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Provisional Mental health Counselor Licensee Out-of-State Telehealth       ",
+        "Value": "9649"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Provisional Psychologist                                                   ",
+        "Value": "2702"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Provisional Psychologist Out-of-State Telehealth                           ",
+        "Value": "9655"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Provisional Speech-Language Pathologist                                    ",
+        "Value": "3005"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Provisional Speech-Language Pathologist Out-of-State Telehealth            ",
+        "Value": "9673"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Psychologist                                                               ",
+        "Value": "2701"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Psychologist Out-of-State Telehealth                                       ",
+        "Value": "9654"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Rad Tech Approved CE courses                                               ",
+        "Value": "7611"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Rad Tech Approved CE Providers                                             ",
+        "Value": "7610"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Radiologic Technology                                                      ",
+        "Value": "7601"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Radiologic Technology Out-of-State Telehealth                              ",
+        "Value": "9635"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Radiologist Assistant                                                      ",
+        "Value": "7602"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Radiologist Assistant Out-of-State Telehealth                              ",
+        "Value": "9636"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Registered Chiropractic Assistant                                          ",
+        "Value": "502"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Registered Clinical Social Worker Intern                                   ",
+        "Value": "5207"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Registered Clinical Social Worker Intern Out-of-State Telehealth           ",
+        "Value": "9650"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Registered Marriage and Family Therapist Intern                            ",
+        "Value": "5208"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Registered Marriage and Family Therapist Intern Out-of-State Telehealth    ",
+        "Value": "9651"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Registered Mental Health Counselor Intern                                  ",
+        "Value": "5209"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Registered Mental Health Counselor Intern Out-of-State Telehealth          ",
+        "Value": "9652"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Registered Nurse                                                           ",
+        "Value": "1701"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Registered Nurse Out-of-State Telehealth Provider                          ",
+        "Value": "9601"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Registered Pharmacy Technician                                             ",
+        "Value": "2208"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Registered Respiratory Therapist                                           ",
+        "Value": "5701"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Registered Respiratory Therapist Out-of-State Telehealth                   ",
+        "Value": "9662"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Registered Student Exemption                                               ",
+        "Value": "5706"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Registration for Resident/HSE Physician                                    ",
+        "Value": "1510"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Respiratory Care Practitioner by Exam                                      ",
+        "Value": "5703"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Respiratory Care Practitioner Critical Care                                ",
+        "Value": "5704"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Respiratory Care Practitioner Critical Care Out-of-State Telehealth        ",
+        "Value": "9664"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Respiratory Care Practitioner Non-Critical Care                            ",
+        "Value": "5705"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Respiratory Care Practitioner Non-Critical Care Out-of-State Telehealth    ",
+        "Value": "9665"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "RN Remedial Course                                                         ",
+        "Value": "1708"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "School Psychologist                                                        ",
+        "Value": "4101"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "School Psychologist Out-of-State Telehealth                                ",
+        "Value": "9657"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Speech-Language Pathologist                                                ",
+        "Value": "3001"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Speech-Language Pathologist Out-of-State Telehealth                        ",
+        "Value": "9671"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Speech-Language Pathology Assistant                                        ",
+        "Value": "3003"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Speech-Language Pathology Assistant Out-of-State Telehealth                ",
+        "Value": "9680"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Temporary Medical Physicist                                                ",
+        "Value": "6008"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Temporary Medical Physicist Out-of-State Telehealth                        ",
+        "Value": "9632"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Temporary Midwife                                                          ",
+        "Value": "3202"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Temporary Military Platform Medical Doctor                                 ",
+        "Value": "1518"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Therapeutic Radiological Physicist                                         ",
+        "Value": "6002"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Therapeutic Radiological Physicist Out-of-State Telehealth                 ",
+        "Value": "9628"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Vehicle Permit (Aircraft)                                                  ",
+        "Value": "2606"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Vehicle Permit (ALS)                                                       ",
+        "Value": "2604"
+    },
+    {
+        "Disabled": false,
+        "Group": null,
+        "Selected": false,
+        "Text": "Vehicle Permits (BLS)                                                      ",
+        "Value": "2605"
+    }
+]

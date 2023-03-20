@@ -1,0 +1,2 @@
+# Note: make sure to define function in .git/config
+*.ipynb filter=strip-notebook-output

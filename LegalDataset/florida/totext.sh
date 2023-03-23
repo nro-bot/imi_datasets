@@ -4,11 +4,11 @@
 # If `pdftotext` not installed, use `apt install poppler-utils`
 # Run with sh ./totext.sh  | tee -a log.txt
 
-TOTAL=$(ls -U docs | wc -l)
+TOTAL=$(ls -U nogit_data/docs | wc -l)
 COUNT=0
 mkdir text -pv # make folder, ignore error if already exists
 
-cd docs
+cd nogit_data/docs
 echo "Current folder: $(pwd)"
 
 for file in *.pdf

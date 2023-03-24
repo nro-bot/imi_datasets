@@ -1,7 +1,12 @@
 # 23 Mar 2023
 # nrobot
-# Get URLs for subcategory pages that contain list of threads
-# NOTE: overwrite set to false in settings at bottom
+
+# Given base url (for a Xenforo forum),
+# Get links of all subcategory homepages (those that list threads, not further
+# sub-sub-categories) 
+
+# NOTE: overwrite csv set to false in settings at bottom
+# NOTE: hardcoded with ampreviews specific link features 
 
 import sys
 
@@ -20,15 +25,15 @@ from scrapy.utils.log import configure_logging
         # follow the link to the subcategory and parse again 
 
 class AmpRevSpider(CrawlSpider):
+    name = 'extract_cities_and_categories'
+
     configure_logging(install_root_handler=False)
     logging.basicConfig(
-        filename='nogit_data/log.txt',
+        filename='nogit_data/categories_spider.log',
         format='[%(asctime)s] %(levelname)s: %(message)s',
         datefmt='%d/%b/%Y %H:%M:%S',
-        level=logging.INFO
     )
 
-    name = 'extract_cities'
 
     def start_requests(self):
         self.cities = set()
@@ -82,5 +87,6 @@ c = CrawlerProcess(
         'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36',
     }
 )
+
 c.crawl(AmpRevSpider)
 c.start()

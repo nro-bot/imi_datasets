@@ -35,7 +35,7 @@ class AmpRevSpider(CrawlSpider):
         self.base_url = 'https://ampreviews.net'
 
         url = 'https://ampreviews.net/index.php'
-        self.logger.error(f'starting with url {url}')
+        self.logger.debug(f'starting with url {url}')
         yield scrapy.Request(url=url, callback=self.parse_item)
 
     def parse_item(self, response):

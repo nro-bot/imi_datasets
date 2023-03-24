@@ -1,7 +1,9 @@
 # 23 Mar 2023
 # nrobot
 
-# Get list of urls representing the first page of all threads in all categories
+# Given a list of category (links), 
+# get all threads from those categories (following next page links if present) 
+# Outputs csv.
 
 import scrapy
 from scrapy.crawler import CrawlerProcess
@@ -12,10 +14,9 @@ from datetime import datetime
 import logging
 import pandas as pd
 
-
-# for a given category 
-# e.g. https://ampreviews.net/index.php?forums/discussion-.89/
-# https://ampreviews.net/index.php?threads/-spa-browns.137/
+# Example link formats
+# Category: https://ampreviews.net/index.php?forums/discussion-somecity.89/
+# Thread: https://ampreviews.net/index.php?threads/my-spa-browns.137/
 
 class ThreadSpider(CrawlSpider):
     name = 'extract_threads'
@@ -64,10 +65,10 @@ class ThreadSpider(CrawlSpider):
             city = category_text.split(' - ')[-1]
 
         self.logger.info(f'Now scraping: {page_name_and_pagination} -- {page_url} -- TotalPages {max_pages}')
-        ratio_complete = self.pages_scraped/self.TOTAL_THREAD_PAGES
+        ratio_complete = self.pages_scraped / self.TOTAL_THREAD_PAGES
         self.logger.warning(f'Approximate progress: [ {self.pages_scraped} / {self.TOTAL_THREAD_PAGES} ]'
             f' [ {ratio_complete*100:.2f}% ]'
-            f' [ {(1 - ratio_complete)*self.TOTAL_HOURS:.2f} HRS LEFT ]')
+                            f' [ {(1 - ratio_complete)*self.TOTAL_HOURS:.2f} HRS LEFT ]')
 
         for thread in response.css('div.structItem--thread'):
             data = {}
@@ -113,7 +114,7 @@ c = CrawlerProcess(
             "nogit_data/list_of_threads.csv" : {"format" : "csv",
                                 "overwrite":True,
                                 "encoding": "utf8",
-                            }},
+                }},
         "CONCURRENT_REQUESTS":1, # default 16
         "CONCURRENT_REQUESTS_PER_DOMAIN":1, # default 8 
         "CONCURRENT_ITEMS":1, # DEFAULT 100

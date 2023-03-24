@@ -27,7 +27,6 @@ class ThreadSpider(CrawlSpider):
         datefmt='%d/%b/%Y %H:%M:%S',
     )
 
-
     def start_requests(self):
         self.base_url = 'https://ampreviews.net'
         self.pages_scraped = 0
@@ -47,6 +46,7 @@ class ThreadSpider(CrawlSpider):
         # NOTE: assuming delay setting is 2 seconds ! 
         self.TOTAL_HOURS = self.TOTAL_THREAD_PAGES * 2 / 3600 
         self.logger.warning(f'Total thread pages: {self.TOTAL_THREAD_PAGES}')
+        self.logger.warning(f'Approximate time needed (at 2 secs per page): {self.TOTAL_HOURS:.2f} hrs')
 
     def parse_page(self, response):
         self.pages_scraped += 1
@@ -64,10 +64,10 @@ class ThreadSpider(CrawlSpider):
             city = category_text.split(' - ')[-1]
 
         self.logger.info(f'Now scraping: {page_name_and_pagination} -- {page_url} -- TotalPages {max_pages}')
-        perc_done = self.pages_scraped/self.TOTAL_THREAD_PAGES*100
+        ratio_complete = self.pages_scraped/self.TOTAL_THREAD_PAGES
         self.logger.warning(f'Approximate progress: [ {self.pages_scraped} / {self.TOTAL_THREAD_PAGES} ]'
-            f' [ {perc_done:.2f}% ]'
-            f' [ {(1 - perc_done)*self.TOTAL_HOURS:.2f} HRS LEFT ]')
+            f' [ {ratio_complete*100:.2f}% ]'
+            f' [ {(1 - ratio_complete)*self.TOTAL_HOURS:.2f} HRS LEFT ]')
 
         for thread in response.css('div.structItem--thread'):
             data = {}

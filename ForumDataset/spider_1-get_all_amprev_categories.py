@@ -1,6 +1,9 @@
 # 23 Mar 2023
 # nrobot
 # Get URLs for subcategory pages that contain list of threads
+# NOTE: overwrite set to false in settings at bottom
+
+import sys
 
 import scrapy
 from scrapy.spiders import CrawlSpider
@@ -26,8 +29,6 @@ class AmpRevSpider(CrawlSpider):
     )
 
     name = 'extract_cities'
-    #start_urls = ['https://ampreviews.net/index.php']
-    #allowed_domains = 'https://ampreviews.net/index.php'
 
     def start_requests(self):
         self.cities = set()
@@ -39,21 +40,25 @@ class AmpRevSpider(CrawlSpider):
 
     def parse_item(self, response):
         for category in response.css("div.node-main"):
+
             category_link = category.css("a::attr(href)").extract_first() 
 
-            if 'reviews-' in category_link or 'discussion-' in category_link:
-                num_threads, num_msgs = category.css("dd::text").extract()
+            if 'boardwide-' or 'reviews-' in category_link or 'discussion-' in category_link:
                 title = category.css("a::text").get()
-                city = title.split(' - ')[-1]
-
-                self.logger.info(f'Got city: {city}, from link: {category_link}')
-                self.cities.add(city)
-
+                num_threads, num_msgs = category.css("dd::text").extract()
+                
+                if 'boardwide-' in category_link:
+                    city = 'N/A'
+                else:
+                    city = title.split(' - ')[-1]
+                    self.cities.add(city)
+                    self.logger.info(f'Got city: {city}, from link: {category_link}')
+                    
                 yield {
                     'title': title,
                     'city': city,
                     'link': category_link,
-                    'num_threads':   num_threads,
+                    'num_threads':  num_threads,
                     'num_messages': num_msgs
                 }
                 self.logger.debug(f'List of cities so far: {self.cities}')
@@ -67,9 +72,12 @@ c = CrawlerProcess(
     settings = {
         "FEEDS":{
             "nogit_data/list_of_categories.csv" : {"format" : "csv",
-                                "overwrite":False,
+                                "overwrite":True,
                                 "encoding": "utf8",
                             }},
+        "CONCURRENT_REQUESTS":1, # default 16
+        "CONCURRENT_REQUESTS_PER_DOMAIN":1, # default 8 
+        "CONCURRENT_ITEMS":1, # DEFAULT 100
         "DOWNLOAD_DELAY": 2,
         'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36',
     }

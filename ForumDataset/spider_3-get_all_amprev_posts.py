@@ -1,7 +1,6 @@
 # 24 Mar 2023
 # nrobot
 
-
 # Given a list of thread (links), 
 # get post text (and post, post author metadata) from those threads (following 
 # next page links if present). 
@@ -13,6 +12,8 @@ from scrapy.spiders import CrawlSpider
 from scrapy.crawler import CrawlerProcess
 import logging
 from scrapy.utils.log import configure_logging 
+from bs4 import BeautifulSoup
+from datetime import datetime
 import re
 
 import pandas as pd
@@ -27,7 +28,7 @@ class PostSpider(CrawlSpider):
 
     configure_logging(install_root_handler=False)
     logging.basicConfig(
-        filename='posts_spider.log',
+        filename='nogit_data/posts_spider.log',
         format='[%(asctime)s] %(levelname)s: %(message)s',
         datefmt='%d/%b/%Y %H:%M:%S',
         level=logging.INFO # NOTE: doesn't actually do anything
@@ -54,45 +55,51 @@ class PostSpider(CrawlSpider):
             yield scrapy.Request(url=url, callback=self.parse_page)
 
     def parse_page(self, response):
-        page_data = {}
-        #time.sleep(5)
-
         self.logger.debug(f'Parsing url {response.url}')
-        page_name_and_pagination = response.css('title::text').get() # e.g. Discussion-Dallas | Page 2 | AMPReviews
 
+        page_name_and_pagination = response.css('title::text').get() # e.g. Discussion-Dallas | Page 2 | AMPReviews
+        thread_url = response.url  
         thread_max_pages = response.css(
             'li.pageNav-page:last-child a::text').get(default=1)
 
         src_category_name = response.css('.p-breadcrumbs li:last-child span::text').get()
-        thread_url = response.url  
         thread_page_num = response.css('.pageNav-page--current a::text').get(default=1)
         thread_page_name = response.css('.p-title-value::text').get()
 
-        # - get post metadata
         posts = response.css('article.message--post')
         for post in posts: 
             data = {}
-            data['post_id'] = post.css('::attr(data-content)').get()
+            data['time_downloaded'] = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
             
-            # -- POST STATS
+            # -- POST Metadata
+            # 
+            data['post_id'] = post.css('::attr(data-content)').get()
             data['posted_date_readable'] = post.css('.message-date time::attr(title)').get()
             data['posted_date_data'] = post.css('.message-date time::attr(data-time)').get()
-            post_ordinal = post.css('.message-attribution-opposite a::text').get() # example: #19 
+            post_ordinal = post.css('.message-attribution-opposite a::text').get() # example: "#19"
             post_ordinal = post_ordinal[1:] if post_ordinal else None # in case CSS selector fails / website changes, scraper so not completely fail
             data['post_ordinal'] = post_ordinal
 
             # -- POST TEXT 
-            page_data['post_text'] = ''.join(post.css('div.bbWrapper::text').getall())
+            # 
+            #data['post_text'] = ''.join(post.css('div.bbWrapper::text').getall())
+            #data['post_html'] = ''.join(post.css('div.bbWrapper').getall())
+            post_text = post.css('div.bbWrapper').get() 
+            post_text = BeautifulSoup(post_text, 'html.parser')
+            if post_text.find('div', class_='bbCodeBlock'):
+                post_text.find('div', class_='bbCodeBlock').decompose()
+            data['post_text'] = post_text.text
 
-            # -- QUOTES: handle quotes if exist
+            # -- QUOTES
+            # Handle quotes if exist
             quotes = post.css('div.bbCodeBlock--quote')
             data['num_quotes'] = len(quotes) # store as checksum in case want to unconcatenate quotes
 
-            quoted_post_ids = []
-            quoted_authors = []
-            quoted_contents = []
 
             if quotes: 
+                quoted_post_ids = []
+                quoted_authors = []
+                quoted_contents = []
                 for quote in quotes:
                     # Example output: 
                     # <a href="/index.php?goto/post&amp;ipostd=955852" class="bbCodeBlock-sourceJump" 
@@ -108,23 +115,25 @@ class PostSpider(CrawlSpider):
                     quoted_post_ids.append(quoted_post_id)
                     quoted_contents.append(quoted_post_content)
 
-                data['quoted_post_ids'] = ' ~-~ '.join(quoted_post_ids) 
-                data['quoted_authors'] = ' ~-~ '.join(quoted_authors) 
-                data['quoted_contents'] = ' ~-~ '.join(quoted_contents) 
-                
+            data['quoted_post_ids'] = ' ~-~ '.join(quoted_post_ids) if quotes else ''
+            data['quoted_authors'] = ' ~-~ '.join(quoted_authors) if quotes else '' 
+            data['quoted_contents'] = ' ~-~ '.join(quoted_contents) if quotes else ''
+
             # --  LIKES
+            # 
             likers = post.css('div.likesBar a * ::text').getall()
             num_likers = len(likers) # could be interesting stat # TODO: fix this count
             data['num_likers'] = num_likers 
+
             if num_likers == 3:
                 if re.findall(likers[-1], ' and \d+ other'):
                     _num = likers[-1].split(' other')[0].split(' and ')[1]
                     num_likers += int(_num)
-
             likers = ' - '.join(likers)
             data['likers'] = likers
 
-            # -- AUTHOR STATS
+            # -- AUTHOR Metadata 
+            # 
             data['author'] = post.css('::attr(data-author)').get()
             data['author_url'] = post.css('a.username::attr(href)').get()
             author_title, author_num_posts, author_num_reviews = None, None, None 
@@ -132,73 +141,35 @@ class PostSpider(CrawlSpider):
             try:
                 author_title, author_num_posts, author_num_reviews = post.css(
                     '.userTitle ::text').getall()[:3]
-                    # Example output: ['Review Contributor', 'Messages: 46', 'Reviews: 13',# 'Joined ', 'Oct 2, 2019']
+                    # Example output: ['Review Contributor', 'Messages: 46', 'Reviews: 13']
+                    # OR ['Registered Member', 'Messages: 30, 'Joined ']
                 author_num_posts = author_num_posts.split()[-1]
                 author_num_reviews = author_num_reviews.split()[-1]
+                if author_num_reviews == 'Joined':
+                    author_num_reviews = 'N/A'
             except: # May produce indexing error if no results
                 self.warning.warning('Attempt to extract author stats failed')
 
             data['author_title'] = author_title
-            data['author_num_posts'] = author_title
-            data['author_num_reviews'] = author_title
+            data['author_num_posts'] = author_num_posts
+            data['author_num_reviews'] = author_title # TODO FIX
 
             data['join_date_readable'] = post.css('.userTitle time::attr(title)').get()
             data['join_date_data'] = post.css('.userTitle time::attr(data-time)').get()
 
+            data['src_category_name'] = src_category_name
+            data['thread_page_url'] = thread_url
+            data['thread_page_name'] = thread_page_name
+            data['thread_page_num'] = thread_page_num
+            data['thread_max_pages'] = thread_max_pages
+
             self.logger.info(
                 f'Now scraped: {page_name_and_pagination} -- {thread_url} -- TotalPages {thread_max_pages}')
 
-            # -- YIELD
-            # create dictionary to yield
-            loc = locals()
-
-            fields = '''
-                post_ordinal
-                posted_date_readable
-
-                src_category_name
-                thread_page_name
-                thread_page_num
-                thread_max_pages
-
-                author
-                author_title 
-                author_num_posts 
-                author_num_reviews
-
-                num_quotes
-                quoted_post_ids
-                quoted_authors
-                likers
-                num_likers 
-
-                thread_url
-                post_id
-                posted_date_data 
-
-                author_url
-                join_date_readable
-                join_date_data
-
-                post_text
-                quoted_contents
-            '''.split()
-
-            #_ = '''
-            #    post_text
-            #    quoted_contents
-            #'''
-
-            #fields = set(fields) # prevent dup key error, but will reorder csv
-            # self.logger.debug(fields)
-            # page_data = {key: loc[key] for key in loc.keys() if key in fields}
-            # that will not retain ordering so instead:
-            for key in fields:
-                page_data[key] = loc[key] 
-
-            #page_data['comment'] = page_name
-            page_data['comment'] = '' 
-            yield page_data
+            # -- Post metadata
+            #
+            data['comment'] = '' 
+            yield data
 
         # dirty hack to insert "comment" into bottom of csv file
         # which contains the current page and url, just in case
@@ -215,7 +186,7 @@ class PostSpider(CrawlSpider):
 c = CrawlerProcess(
     settings={
         "FEEDS":{
-            "_tmp_posts.csv" : {"format" : "csv",
+            "nogit_data/list_of_post_contents.csv" : {"format" : "csv",
                                 "overwrite":True,
                                 "encoding": "utf8",
                             }},

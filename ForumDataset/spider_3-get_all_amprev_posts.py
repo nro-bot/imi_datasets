@@ -6,6 +6,11 @@
 # next page links if present).
 
 # Applies to Xenforo forums. Outputs csv.
+# Run with $ python spider_3-get_all_amprev_posts.py
+# Requires list of urls in nogit_data/list_of_threads.csv
+
+# TODO: arg parsing (for download_delay, url_list.csv, and whether to clean
+# restart w/o resuming from crawls/amprev_posts) 
 
 import scrapy
 from scrapy.spiders import CrawlSpider
@@ -44,7 +49,7 @@ class PostSpider(CrawlSpider):
         # order within each category by date posted thread was posted
         # (Most so have data to explore while scraper runs)
 
-        threads_list = pd.read_csv('nogit_data/tmp_list_of_threads.csv')
+        threads_list = pd.read_csv('nogit_data/list_of_threads.csv')
         urls_list = threads_list.dropna(subset='link').sort_values(
             by=['comment', 'posted_date_data'],
             ascending=[True, False]).link
@@ -56,8 +61,8 @@ class PostSpider(CrawlSpider):
             url=homepage_url, callback=self.tally_progress, 
             dont_filter=True) # never fail to recrawl due to the duplicate filter
        
+        self.logger.debug('\tBOLD_NOTE: Starting spider')
         for url in urls_list:
-            self.logger.debug('\tBOLD_NOTE: Starting spider')
             url = self.base_url + url
             self.logger.info(f'Now working with url {url}')
             yield scrapy.Request(url=url, callback=self.parse_page)
@@ -106,7 +111,7 @@ class PostSpider(CrawlSpider):
         self.logger.info( 
             f'Now scraping: {page_name_and_pagination} -- {thread_url} -- TotalPages {thread_max_pages}')
         ratio_complete = self.pages_scraped / self.TOTAL_PAGE_REQS
-        self.logger.warning(f'Approximate progress: [ {self.pages_scraped} / {self.TOTAL_PAGE_REQS} ]'
+        self.logger.debug(f'BOLD_NOTE: Approximate progress: [ {self.pages_scraped} / {self.TOTAL_PAGE_REQS} ]'
             f' [ {ratio_complete*100:.2f}% ]'
                             f' [ {(1 - ratio_complete)*self.TOTAL_HOURS:.2f} HRS LEFT ]')
 
@@ -118,7 +123,7 @@ class PostSpider(CrawlSpider):
                 '%d/%b/%Y %H:%M:%S')
 
             # -- POST Metadata
-            #
+            data['src_category_name'] = src_category_name
             data['posted_date_readable'] = post.css(
                 '.message-date time::attr(title)').get()
             post_ordinal = post.css(
@@ -147,7 +152,6 @@ class PostSpider(CrawlSpider):
             data['author_num_posts'] = author_num_posts
             data['author_num_reviews'] = author_title  # TODO FIX
 
-            data['src_category_name'] = src_category_name
             data['thread_page_name'] = thread_page_name
             data['thread_page_num'] = thread_page_num
             data['thread_max_pages'] = thread_max_pages
@@ -218,7 +222,7 @@ class PostSpider(CrawlSpider):
             #data['post_html'] = ''.join(post.css('div.bbWrapper').getall())
             post_text = post.css('div.bbWrapper').get()
             post_text = BeautifulSoup(post_text, 'html.parser')
-            if post_text.find('div', class_='bbCodeBlock'):
+            if post_text.find('div', class_='bbCodeBlock'): # remove quoted text
                 post_text.find('div', class_='bbCodeBlock').decompose()
             data['post_text'] = post_text.text
 

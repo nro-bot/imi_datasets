@@ -249,7 +249,7 @@ c = CrawlerProcess(
         "CONCURRENT_REQUESTS": 1,  # default 16
         "CONCURRENT_REQUESTS_PER_DOMAIN": 1,  # default 8
         "CONCURRENT_ITEMS": 1,  # DEFAULT 100
-        "DOWNLOAD_DELAY": 1,  # default 0
+        "DOWNLOAD_DELAY": 4,  # default 0
         "DEPTH_LIMIT": 0,
         # "AUTOTHROTTLE_ENABLED": True,
         # "AUTOTHROTTLE_START_DELAY": 1,

@@ -3,7 +3,8 @@
 
 # Given a list of category (links), 
 # get all threads from those categories (following next page links if present) 
-# Outputs csv.
+
+# Applies to Xenforo forums. Outputs csv.
 
 import scrapy
 from scrapy.crawler import CrawlerProcess
@@ -31,7 +32,8 @@ class ThreadSpider(CrawlSpider):
     def start_requests(self):
         self.base_url = 'https://ampreviews.net'
         self.pages_scraped = 0
-        yield scrapy.Request(url=self.base_url, callback=self.tally_progress)
+
+        yield scrapy.Request(url=self.base_url, callback=self.tally_progress, dontfilter=True)
 
         forum_data = pd.read_csv('nogit_data/list_of_categories.csv')
 
@@ -121,7 +123,7 @@ c = CrawlerProcess(
         "DOWNLOAD_DELAY": 2, # default 0
         "DEPTH_LIMIT":0,
         "JOBDIR":'nogit_data/crawls/amprev_threads',
-        "DUPEFILTER_DEBUG":True,
+        "DUPEFILTER_DEBUG":True, # Print urls filtered b/c they are already crawled  
         'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36',
     }
 )

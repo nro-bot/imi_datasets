@@ -33,7 +33,7 @@ class PostSpider(CrawlSpider):
 
     configure_logging(install_root_handler=False)
     logging.basicConfig(
-        filename='nogit_data/posts_spider.log',
+        filename='nogit_data/TEMPORARY_posts_spider.log',
         format='[%(asctime)s] %(levelname)s: %(message)s',
         datefmt='%d/%b/%Y %H:%M:%S',
         level=logging.INFO  # NOTE: doesn't actually do anything
@@ -49,7 +49,7 @@ class PostSpider(CrawlSpider):
         # order within each category by date posted thread was posted
         # (Most so have data to explore while scraper runs)
 
-        threads_list = pd.read_csv('nogit_data/list_of_threads.csv')
+        threads_list = pd.read_csv('nogit_data/TEMPORARY_list_of_threads.csv')
         urls_list = threads_list.dropna(subset='link').sort_values(
             by=['comment', 'posted_date_data'],
             ascending=[True, False]).link
@@ -65,7 +65,7 @@ class PostSpider(CrawlSpider):
         for url in urls_list:
             url = self.base_url + url
             self.logger.info(f'Now working with url {url}')
-            yield scrapy.Request(url=url, callback=self.parse_page)
+            yield scrapy.Request(url=url, callback=self.parse_page, dont_filter=True)
 
     def tally_progress(self, response):
         # -- Calculate progress bar.
@@ -176,18 +176,19 @@ class PostSpider(CrawlSpider):
                     # <a href="/index.php?goto/post&amp;ipostd=955852" class="bbCodeBlock-sourceJump"
                     # data-xf-click="attribution" data-content-selector="#post-955852">
                     # XYZ said:</a>
+                    # Oh no, so some people are using quotes as code, not just for referring back to people.
                     quoted_post_id = quote.css(
-                        '.bbCodeBlock-sourceJump::attr(data-content-selector)').get()
+                        '.bbCodeBlock-sourceJump::attr(data-content-selector)').get() or 'N/A' 
                     # .replace(' said:', '')
-                    quoted_author = quote.css('a::text').get()
-                    quoted_author = quoted_author.split(
-                    )[0] if quoted_author else None
-                    quoted_post_content = quote.css(
-                        '.bbCodeBlock-expandContent::text').get()  # TODO: should fix this -- probably removes links in quoted content
+                    quoted_author = quote.css('a.bbCodeBlock-sourceJump::text').get() or 'N/A'
+                    quoted_author = quoted_author.split()[0]
+                    _quoted_text = quote.css(
+                        '.bbCodeBlock-expandContent::text').get() or ''  
+                    _quoted_text = BeautifulSoup(_quoted_text, 'html.parser')
 
                     quoted_authors.append(quoted_author)
                     quoted_post_ids.append(quoted_post_id)
-                    quoted_contents.append(quoted_post_content)
+                    quoted_contents.append(_quoted_text.text)
 
             data['quoted_post_ids'] = ' ~-~ '.join(
                 quoted_post_ids) if quotes else ''
@@ -222,7 +223,7 @@ class PostSpider(CrawlSpider):
             #data['post_html'] = ''.join(post.css('div.bbWrapper').getall())
             post_text = post.css('div.bbWrapper').get()
             post_text = BeautifulSoup(post_text, 'html.parser')
-            if post_text.find('div', class_='bbCodeBlock'): # remove quoted text
+            if post_text.find('div', class_='bbCodeBlock--quote'): # remove quoted text
                 post_text.find('div', class_='bbCodeBlock').decompose()
             data['post_text'] = post_text.text
 
@@ -246,19 +247,19 @@ class PostSpider(CrawlSpider):
 c = CrawlerProcess(
     settings={
         "FEEDS": {
-            "nogit_data/list_of_post_contents.csv": {"format": "csv",
+            "nogit_data/TEMPORARY_list_of_post_contents.csv": {"format": "csv",
                                                      "overwrite": True,
                                                      "encoding": "utf8",
                                                      }},
         "CONCURRENT_REQUESTS": 1,  # default 16
         "CONCURRENT_REQUESTS_PER_DOMAIN": 1,  # default 8
         "CONCURRENT_ITEMS": 1,  # DEFAULT 100
-        "DOWNLOAD_DELAY": 4,  # default 0
+        "DOWNLOAD_DELAY": 1,  # default 0
         "DEPTH_LIMIT": 0,
         # "AUTOTHROTTLE_ENABLED": True,
         # "AUTOTHROTTLE_START_DELAY": 1,
         # "AUTOTHROTTLE_MAX_DELAY": 3
-        "JOBDIR": 'nogit_data/crawls/amprev_posts',
+        "JOBDIR": 'nogit_data/crawls/TEMPORARY_amprev_posts',
         "DUPEFILTER_DEBUG": True, # Print duplicates that are not recrawled
         'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36',
     }

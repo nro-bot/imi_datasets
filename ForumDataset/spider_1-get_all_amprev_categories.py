@@ -48,7 +48,7 @@ class AmpRevSpider(CrawlSpider):
 
             category_link = category.css("a::attr(href)").extract_first() 
 
-            if 'boardwide-' or 'reviews-' in category_link or 'discussion-' in category_link:
+            if 'boardwide-' in category_link or 'reviews-' in category_link or 'discussion-' in category_link:
                 title = category.css("a::text").get()
                 num_threads, num_msgs = category.css("dd::text").extract()
                 

@@ -33,7 +33,7 @@ class PostSpider(CrawlSpider):
 
     configure_logging(install_root_handler=False)
     logging.basicConfig(
-        filename='nogit_data/TEMPORARY_posts_spider.log',
+        filename='nogit_data/posts_spider.log',
         format='[%(asctime)s] %(levelname)s: %(message)s',
         datefmt='%d/%b/%Y %H:%M:%S',
         level=logging.INFO  # NOTE: doesn't actually do anything
@@ -41,7 +41,8 @@ class PostSpider(CrawlSpider):
 
     def start_requests(self):
         self.base_url = 'https://ampreviews.net'
-        self.pages_scraped = 0
+        self.posts_scraped = 0
+        self.threads_scraped = 0
         # -- Make list of URLs to scrape
 
         # NOTE: because each city has a discussion and a reviews category
@@ -49,7 +50,7 @@ class PostSpider(CrawlSpider):
         # order within each category by date posted thread was posted
         # (Most so have data to explore while scraper runs)
 
-        threads_list = pd.read_csv('nogit_data/TEMPORARY_list_of_threads.csv')
+        threads_list = pd.read_csv('nogit_data/list_of_threads.csv')
         urls_list = threads_list.dropna(subset='link').sort_values(
             by=['comment', 'posted_date_data'],
             ascending=[True, False]).link
@@ -62,6 +63,8 @@ class PostSpider(CrawlSpider):
             dont_filter=True) # never fail to recrawl due to the duplicate filter
        
         self.logger.debug('\tBOLD_NOTE: Starting spider')
+
+        self.TOTAL_THREADS_TO_SCRAPE = len(urls_list)
         for url in urls_list:
             url = self.base_url + url
             self.logger.info(f'Now working with url {url}')
@@ -80,19 +83,23 @@ class PostSpider(CrawlSpider):
         _counts = response.css('div.node-stats dl dd::text').getall()
         _msg_counts = _counts[1::2]
         _msg_counts = [int(num.replace(',', '')) for num in _msg_counts]
-        self.TOTAL_PAGE_REQS = round(sum(_msg_counts)/20) + 1
-        self.TOTAL_HOURS = self.TOTAL_PAGE_REQS * DELAY / 3600 
+        self.TOTAL_POSTS_TO_SCRAPE = sum(_msg_counts)
+
+        fudge_factor = 1.5
+        self.ESTIMATED_HOURS = \
+            self.TOTAL_POSTS_TO_SCRAPE/20 * DELAY/3600 * fudge_factor
 
         self.logger.debug(
-            f'\t Total messages: {sum(_msg_counts)}')
+            f'\t Total messages: {self.TOTAL_POSTS_TO_SCRAPE}/20 = ' 
+            f'{self.TOTAL_POSTS_TO_SCRAPE/20} est. page requests')
         self.logger.debug(
-            f'\t Total message pages: {self.TOTAL_PAGE_REQS}')
-        self.logger.debug(
-            f'\t Approximate time needed (at {DELAY} secs per page): {self.TOTAL_HOURS:.2f} hrs')
+            f'\t Total urls in input file: {self.TOTAL_THREADS_TO_SCRAPE}')
+        self.logger.warning(
+            f'\t Approximate time needed (at {DELAY} secs per page): {self.ESTIMATED_HOURS:.2f} hrs')
 
 
     def parse_page(self, response):
-        self.pages_scraped += 1
+        self.threads_scraped += 1
         self.logger.debug(f'Parsing url {response.url}')
 
         # e.g. Discussion-Dallas | Page 2 | AMPReviews
@@ -110,14 +117,17 @@ class PostSpider(CrawlSpider):
         # - Post progress
         self.logger.info( 
             f'Now scraping: {page_name_and_pagination} -- {thread_url} -- TotalPages {thread_max_pages}')
-        ratio_complete = self.pages_scraped / self.TOTAL_PAGE_REQS
-        self.logger.debug(f'BOLD_NOTE: Approximate progress: [ {self.pages_scraped} / {self.TOTAL_PAGE_REQS} ]'
+        ratio_complete = self.posts_scraped/self.TOTAL_POSTS_TO_SCRAPE
+        self.logger.debug(f'BOLD_NOTE: Approx. posts progress: [ {self.posts_scraped:,d} / {self.TOTAL_POSTS_TO_SCRAPE:,d} ]'
             f' [ {ratio_complete*100:.2f}% ]'
-                            f' [ {(1 - ratio_complete)*self.TOTAL_HOURS:.2f} HRS LEFT ]')
+            f' [ {(1 - ratio_complete)*self.ESTIMATED_HOURS:.2f} HRS LEFT ]')
+        self.logger.debug(f'BOLD_NOTE: Completed:' 
+            f' [ {self.posts_scraped} posts in {self.threads_scraped:,d}/{self.TOTAL_THREADS_TO_SCRAPE:,d} threads ]')
 
         posts = response.css('article.message--post')
 
         for post in posts:
+            self.posts_scraped += 1
             data = {}
             data['time_downloaded'] = datetime.now().strftime(
                 '%d/%b/%Y %H:%M:%S')
@@ -247,19 +257,19 @@ class PostSpider(CrawlSpider):
 c = CrawlerProcess(
     settings={
         "FEEDS": {
-            "nogit_data/TEMPORARY_list_of_post_contents.csv": {"format": "csv",
+            "nogit_data/list_of_post_contents.csv": {"format": "csv",
                                                      "overwrite": True,
                                                      "encoding": "utf8",
                                                      }},
         "CONCURRENT_REQUESTS": 1,  # default 16
         "CONCURRENT_REQUESTS_PER_DOMAIN": 1,  # default 8
         "CONCURRENT_ITEMS": 1,  # DEFAULT 100
-        "DOWNLOAD_DELAY": 1,  # default 0
+        "DOWNLOAD_DELAY": 4,  # default 0
         "DEPTH_LIMIT": 0,
         # "AUTOTHROTTLE_ENABLED": True,
         # "AUTOTHROTTLE_START_DELAY": 1,
         # "AUTOTHROTTLE_MAX_DELAY": 3
-        "JOBDIR": 'nogit_data/crawls/TEMPORARY_amprev_posts',
+        "JOBDIR": 'nogit_data/crawls/amprev_posts',
         "DUPEFILTER_DEBUG": True, # Print duplicates that are not recrawled
         'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36',
     }

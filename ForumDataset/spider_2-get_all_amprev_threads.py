@@ -33,7 +33,7 @@ class ThreadSpider(CrawlSpider):
         self.base_url = 'https://ampreviews.net'
         self.pages_scraped = 0
 
-        yield scrapy.Request(url=self.base_url, callback=self.tally_progress, dontfilter=True)
+        yield scrapy.Request(url=self.base_url, callback=self.tally_progress, dont_filter=True)
 
         forum_data = pd.read_csv('nogit_data/list_of_categories.csv')
 
@@ -45,9 +45,11 @@ class ThreadSpider(CrawlSpider):
     def tally_progress(self, response):
         thread_counts = response.css('div.node-stats dl:first-child dd::text').getall()
         thread_counts = [int(num.replace(',', '')) for num in thread_counts]
+        # There are 20 threads listed on every page
         self.TOTAL_THREAD_PAGES = round(sum(thread_counts)/20) + 1
         # NOTE: assuming delay setting is 2 seconds ! 
         self.TOTAL_HOURS = self.TOTAL_THREAD_PAGES * 2 / 3600 
+        self.logger.debug(f'BOLD_NOTE: Total threads according to homepage: {sum(thread_counts)}')
         self.logger.warning(f'Total thread pages: {self.TOTAL_THREAD_PAGES}')
         self.logger.warning(f'Approximate time needed (at 2 secs per page): {self.TOTAL_HOURS:.2f} hrs')
 

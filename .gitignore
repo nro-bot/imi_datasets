@@ -133,5 +133,5 @@ dmypy.json
 
 # Vi
 #
-.swo
-.swp
+*.swo
+*.swp

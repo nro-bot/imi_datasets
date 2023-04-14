@@ -1,0 +1,192 @@
+\documentclass{article}
+% NOTE: must have file "latex_vars.data" to compile pdf
+% TODO: add try/except to fail gracefully
+
+\PassOptionsToPackage{numbers, compress}{natbib}
+%\usepackage[preprint]{neurips_2022}
+%\usepackage{svg}
+\usepackage{neurips_2022}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+% \usepackage{url}            % simple URL typesetting
+% \urlstyle{same}
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{xcolor}         % colors
+\usepackage{wrapfig}
+\usepackage{graphicx}
+%\usepackage[draft]{graphicx}
+\usepackage{booktabs}
+\usepackage{csquotes}
+\usepackage{subcaption}     % messes with wrapping / pad between titles and figure!
+\usepackage{dirtytalk}
+%\usepackage{natbib}         % cite 
+%\usepackage{jmlr2e}
+%\usepackage{emoji}
+\usepackage{datatool, filecontents}
+\usepackage{scalerel,graphicx,xparse}
+\usepackage{cleveref}       % hyperlinks
+
+
+% -----------------------------------------
+% package to open file containing variables
+\DTLsetseparator{;}% Set the separator between the columns.
+
+% import data
+% TODO: import config yml file to determine where data is
+\DTLloaddb[noheader, keys={thekey,thevalue}]{mydata}{"nogit_data/latex_vars.data"} %\DTLloaddb[noheader, keys={thekey,thevalue}]{}{python_to_latex_variables.dat}
+% Loads mydata.dat with column headers 'thekey' and 'thevalue'
+\newcommand{\var}[1]{\DTLfetch{mydata}{thekey}{#1}{thevalue}}
+% VARIABLES:
+
+% -----------------------------------------
+\newcommand{\comment}[1]{}    % create multi-line comment
+
+% \NewDocumentCommand\emojione{}{\scalerel*{\includegraphics{fig/cool.pdf}}{X}}
+
+% -----------------------------------------
+% \title{Classification of Online Massage Parlor Reviews for Understanding the Illicit Massage Industry}
+\title{Datasets for Understanding the Illicit Massage Industry}
+
+\author{%
+  Rui Ouyang\\ %\thanks{nrobot.dev
+   % } \\
+  School of Engineering and Applied Sciences\\
+  Harvard University\\
+  Cambridge, MA 02138\\
+  \texttt{nrobot@.mit.edu} \\
+  % examples of more authors
+  \And  %\AND
+  Roberto Rigobon\\
+  Sloan School of Business\\
+  Massachusetts Institute of Technology\\
+  Cambridge, MA 02139\\
+  \texttt{rigobon@mit.edu}
+}
+
+  
+% -----------------------------------------
+% 
+% -----------------------------------------
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  Massage businesses in the illicit massage industry (IMIs) offer commercial sexual
+  services. They can be found in all major cities in the United States. Due to
+  increasing law enforcement and public scrutiny, as well as the potential for
+  labor and sex trafficking of workers, a better understanding
+  of the IMI is urgently needed. In this paper, we present two novel natural
+  language (and spatiotemporal) datasets for the IMI, including the first ground
+  truth location dataset. Specifically, we present a dataset consisting of
+  \var{NUM_FORUM_POSTS} posts and metadata on \var{NUM_FORUM_USERS} users
+  publicly available on a forum
+  for buyers of commercial
+  sex in IMIs. We also present legal documents, including extracted
+  text, from over 6,000 administrative actions in Florida and Wisconsin. 
+  We present several case studies showing the utility of these datasets: acronym
+  expansion, related domain discovery, user demographic studies, change in 
+  law enforcement interactions over time, and the range of fines and
+  penalties actually given. These use cases are relevant not only to IMI
+  researchers but also to the wider counter-trafficking and social sciences
+  research communities. Our datasets represent a major step toward 
+  applying advances in natural language processing to study the IMI in the
+  pursuit of a more just society. 
+  %
+
+\end{abstract}
+\cite{/EstimatMikolov2013EfficientEO}
+
+
+\textbf{Content Warning:} Due to the inclusion of natural language forum text, this work contains toxic language. Reader discretion is advised.
+
+\section{Introduction}
+\label{intro}
+% https://tex.stackexchange.com/questions/511386/issue-with-auto-export-of-svg-using-inkscape-shell-escape?rq=1
+
+
+\include{nogit_data/section_intro.tex}
+
+\section{Related Work}
+
+\include{nogit_data/section0_related_work.tex}
+
+\section{Methods}
+
+\include{nogit_data/section1_data_description.tex}
+
+
+
+\section{Case Studies}
+
+\include{nogit_data/section2_case_studies.tex}
+
+\section{Conclusion and Future Work}
+
+% Summary of the dataset's contributions and achievements
+
+% Suggestions for future improvements and extensions of the dataset
+
+
+% Potential research directions and applications of the dataset
+
+
+
+
+\medskip
+
+\newpage
+
+{
+\bibliographystyle{ieee_fullname}
+\bibliography{main}
+}
+
+
+\newpage
+
+
+\end{document}
+
+
+
+
+
+% In this section we first provide domain-specific background for our work, then
+% explain our motivation and specify our research aims.
+
+% \subsection{Domain-Specific Background}
+
+% We provide a brief overview of the illicit massage industry (IMI), its
+% importance, and how it relates to human trafficking. For the latter, we briefly
+% compare and contrast a few different perspectives and leave detailed
+% discussion to the supplementary materials. 
+
+% \subsubsection{Illicit Massage Industry}
+
+% This paper applies machine learning as a tool to study
+% the illicit massage industry. An illicit massage business (IMB) is a business
+% that may provide legitimate massages but derives revenue from commercial sex
+% services.  These businesses operate in plain sight and can be found throughout
+% the United States. IMBs form a large industry, and 2018 there were over 11,000
+% IMBs in the United States (according to Polaris \cite{polaris-social}, a
+% non-profit that works to end human trafficking in the US). Polaris estimated a
+% combined annual revenue for IMBs of \$2.5 billion in 2018 alone. At the city and
+% state levels, researchers have combined website data and in-person foot traffic
+% estimate annual gross revenue. These estimates include over 100 million dollars
+% in Houston, over 180 million in Dallas, and over 40 million in Georgia
+% \cite{boucheEstimatingDemandIllicit2018}
+% \cite{DallasweismannmelissaEstimatingDemandGross2019}
+% \cite{rodgersbobStreetGraceIllicit2020} \footnote{These revenues include payment
+% for massage services, not just illicit services.} According to a report by
+% Polaris, the most common type of individuals are women in their thirties to
+% fifties, who have children, arrived recently in from China or Korea, and speak
+% very little English.
+
+% This industry has come to prominence over time with the scandal involving
+% billionaire Robert Kraft \cite{narratives} as well as the the 2020 mass shooting targeting
+% employees at Asian massage parlors in Atlanta \cite{lam_double-edged_2021}.

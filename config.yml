@@ -1,0 +1,4 @@
+'latex_home': 'Latex/datasets_paper/'
+'latex_figs': 'Latex/datasets_paper/fig/'
+ # for exporting values from python to include in latex
+'latex_vars_file': 'Latex/datasets_paper/latex_vars.data'

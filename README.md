@@ -16,3 +16,13 @@ information) in these folders.
  As well as create a `.gitattributes` file with `*.ipynb filter=strip-notebook-output` 
 
 Note: May require pip install jupyter if you are getting "error: external filter failed jupyter: not found"
+
+# Output altair to pdf
+
+to output to pdf... need... npm 0_o
+https://github.com/altair-viz/altair_saver#installation
+
+```
+apt install node
+npm install vega-lite vega-cli canvas
+```

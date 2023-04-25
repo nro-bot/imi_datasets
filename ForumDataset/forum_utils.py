@@ -51,3 +51,23 @@ def save_latex_var(key, value):
 #config = get_project_constants()
 #print(config['git_home'])
 #print(config['latex_vars_file'])
+
+
+def my_snippets():
+    '''
+    from funcy import print_durations
+    with print_durations('importing models'):
+        do_something()
+    '''
+    '''
+    from pandarallel import pandarallel
+    pandarallel.initialize(progress_bar=True)
+    df.parallel_apply()
+
+    from tqdm import tqdm 
+    tqdm.pandas()
+    df.progress_apply()
+    '''
+    '''
+    '''
+    pass

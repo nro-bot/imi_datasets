@@ -1,6 +1,34 @@
 import subprocess
 import yaml
+import altair as alt
 from pathlib import Path
+
+
+def set_altair_theme():
+    COLOR = '#F9F3DC'
+    # chart = chart.configure(background='#F9F3DC').configure_view(fill='white')
+    print(f'{alt.__version__=}')
+    SCALE=1.5
+    def theme_1(*args, **kwargs):
+        my_theme = {'width': 400, 'height': 300,
+                'config': {#'style': {'bar': {'size': 20}},
+                        #'legend': {'symbolSize': 20, 'titleFontSize': 20, 'labelFontSize': 20}, 
+                        'title':{'fontSize': 20*SCALE, 'subtitleFontSize': 12*SCALE, 'subtitleColor':'dimgray'},
+                        'axis': {'titleFontSize': 15*SCALE, 'labelFontSize': 12*SCALE},
+                        "axisX": { 
+                            #https://towardsdatascience.com/consistently-beautiful-visualizations-with-altair-themes-c7f9f889602
+                            "tickSize": 10, # default, including it just to show you can change it
+                            "tickWidth":2,
+                        },
+                        'background': COLOR,
+                        'view': {'fill':'white'}
+                },
+        }
+        return my_theme
+                #'encoding': {'x': {'axis': {'title': 'options'}, 'scale': {'paddingOuter': 0.5, 'paddingInner': 0.5}},
+                #             'y': {'axis': {'title': 'percentage of students'}}}}
+    alt.themes.register('theme_1', theme_1)
+    alt.themes.enable('theme_1')
 
 def get_project_constants(var=None):
     # TODO: should probably not just inject git_home here, should move directly to config.yml somehow 

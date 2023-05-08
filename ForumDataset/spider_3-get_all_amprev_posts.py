@@ -160,7 +160,7 @@ class PostSpider(CrawlSpider):
                 self.warning.warning('Attempt to extract author stats failed')
             data['author_title'] = author_title
             data['author_num_posts'] = author_num_posts
-            data['author_num_reviews'] = author_title  # TODO FIX
+            data['author_num_reviews'] = author_num_reviews # TODO FIX
 
             data['thread_page_name'] = thread_page_name
             data['thread_page_num'] = thread_page_num

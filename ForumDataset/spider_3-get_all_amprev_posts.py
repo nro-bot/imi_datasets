@@ -210,16 +210,15 @@ class PostSpider(CrawlSpider):
             # --  LIKES
             #
             likers = post.css('div.likesBar a * ::text').getall()
-            # could be interesting stat # TODO: fix this count
+            # could be interesting stat 
             num_likers = len(likers)
-            data['num_likers'] = num_likers
-
             if num_likers == 3:
                 if re.findall(likers[-1], ' and \d+ other'):
                     _num = likers[-1].split(' other')[0].split(' and ')[1]
                     num_likers += int(_num)
             likers = ' - '.join(likers)
             data['likers'] = likers
+            data['num_likers'] = num_likers
 
             data['author_url'] = post.css('a.username::attr(href)').get()
             data['join_date_readable'] = post.css(

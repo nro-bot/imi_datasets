@@ -15,7 +15,6 @@ information) in these folders.
 
  As well as create a `.gitattributes` file with `*.ipynb filter=strip-notebook-output` 
 
-
 Note: May require pip install jupyter if you are getting "error: external filter failed jupyter: not found"
 NOTE: if you are experiencing lag in the bash prompts in this repository.
 Make sure to run `git add --renormalize .` after adding the git attribute.
@@ -30,4 +29,10 @@ https://github.com/altair-viz/altair_saver#installation
 apt install node
 npm install vega-lite vega-cli canvas
 ```
+
+# install scrubadub addresses
+
+scrub address is separate (phone is built-in)
+requires a make install:
+https://scrubadub.readthedocs.io/en/latest/addresses.html
 

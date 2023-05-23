@@ -17,7 +17,9 @@ def comma_to_int(df, col_name):
 
 
 def clean_column_types():
-    filepath = Path('nogit_data', 'list_of_post_contents.csv')
+    filepath = Path('.', 'nogit_data', 'list_of_post_contents.csv')
+    filepath = './nogit_data/list_of_post_contents.csv'
+
     df = pd.read_csv(filepath)
 
     # -- Drop N/As and duplicates and unused columns
@@ -40,7 +42,7 @@ def clean_column_types():
         df = comma_to_int(df, column)
 
     # -- Remove mixed type from post_text by replacing NaNs with strings 
-    f['post_text'] = df['post_text'].fillna('')#, inplace=True)
+    df['post_text'] = df['post_text'].fillna('N/A')#, inplace=True)
 
     def debug_types():
         # -- Check column types 
@@ -53,7 +55,7 @@ def clean_column_types():
                 print(col, unique_types)
 
     # -- Export finally
-    readable = ['author', 'posted_date_readable', 'src_category_name', 'thread_page_url', 'post_ordinal', 'post_text']
+    readable = ['author', 'posted_date_readable', 'src_category_name', 'thread_page_url', 'thread_page_name', 'post_ordinal', 'post_text']
     df[readable].to_csv('nogit_data/post_data_only.csv', index=False)
     df.to_csv('nogit_data/dtype_fixed_posts_df.pkl')
 

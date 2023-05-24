@@ -11,7 +11,14 @@ information) in these folders.
 - To ensure data is not leaked through juypter notebook output,
   additionally run
 
- `git config filter.strip-notebook-output.clean 'jupyter nbconvert --ClearOutputPreprocessor.enabled=True --to=notebook --stdin --stdout --log-level=ERROR'  `
+nano .git/config
+
+```
+[filter "strip-notebook-output"]
+    clean = "/Users/owls/v3/bin/jupyter nbconvert --to=notebook --ClearOutputPreprocessor.enabled=True --stdout %f"
+    smudge = cat
+    required
+```
 
  As well as create a `.gitattributes` file with `*.ipynb filter=strip-notebook-output` 
 
